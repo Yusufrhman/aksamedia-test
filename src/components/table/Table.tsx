@@ -137,7 +137,7 @@ export function DataTable<T>({
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: -30, opacity: 0 }}
                   key={(row as any).id}
-                  className="bg-blue-50 dark:bg-neutral-800  rounded"
+                  className="bg-blue-50 dark:bg-neutral-800 "
                 >
                   {showIndex && (
                     <td className="px-4 py-3 rounded-l-lg ">
@@ -162,10 +162,10 @@ export function DataTable<T>({
                     );
                   })}
                   {(onView || onEdit || onDelete) && (
-                    <td className="px-4 py-2 rounded-r-lg flex gap-2 w-fit">
+                    <td className="px-4 py-2 rounded-r-lg  space-x-2 whitespace-nowrap">
                       {onView && (
                         <button
-                          className="p-2 bg-blue-100 dark:bg-blue-800 hover:bg-blue-200 dark:hover:bg-blue-700 rounded-md transition cursor-pointer"
+                          className="p-2 bg-blue-100 dark:bg-blue-800 hover:bg-blue-200 dark:hover:bg-blue-700 rounded-md transition cursor-pointer inline"
                           onClick={() => onView(row)}
                         >
                           <Eye
@@ -176,7 +176,7 @@ export function DataTable<T>({
                       )}
                       {onEdit && (
                         <button
-                          className="p-2 bg-blue-100 dark:bg-blue-800 hover:bg-blue-200 dark:hover:bg-blue-700 rounded-md transition cursor-pointer"
+                          className="p-2 bg-blue-100 dark:bg-blue-800 hover:bg-blue-200 dark:hover:bg-blue-700 rounded-md transition cursor-pointer inline"
                           onClick={() => onEdit(row)}
                         >
                           <Pencil

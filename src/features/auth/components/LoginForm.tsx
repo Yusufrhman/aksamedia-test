@@ -7,10 +7,15 @@ import { validateCredentials } from "../../../utils/validation";
 import type { LoginErrorType } from "../types";
 import { signIn } from "../slice/authSlice";
 import { updateUser } from "../../user/userSlice";
+import { getUser } from "../../user/services/userService";
 
 export default function LoginForm() {
   const [error, setError] = useState<LoginErrorType>({});
-//   const navigate = useNavigate();
+
+  // ini cuma buat placeholder login biar ga lupa username sama password
+  const user = getUser();
+
+  //   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -50,7 +55,7 @@ export default function LoginForm() {
         label="Enter your Username"
         placeholder="John Doe"
         type="text"
-        defaultValue={"myusufrahman"}
+        defaultValue={user?.username}
         error={error.username}
       />
       <Input
@@ -58,7 +63,7 @@ export default function LoginForm() {
         label="Enter your Password"
         placeholder="Password"
         type="password"
-        defaultValue={"aaaaaa"}
+        defaultValue={user?.password}
         error={error.password}
       />
       <MainButton className="w-full mt-2" type="submit">
