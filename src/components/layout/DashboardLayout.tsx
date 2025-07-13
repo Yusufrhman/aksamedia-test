@@ -14,10 +14,8 @@ export default function DashboardLayout({}) {
   }, [isLoggedIn]);
   return (
     <>
-      {/* <ProductProvider> */}
       <Header />
       <Outlet />
-      {/* </ProductProvider> */}
     </>
   );
 }

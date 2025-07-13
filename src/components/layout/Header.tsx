@@ -4,6 +4,7 @@ import type { RootState } from "../../store/store";
 import Dropdown from "../dropdown/Dropdown";
 import { signOut } from "../../features/auth/slice/authSlice";
 import { Link } from "react-router";
+import { LogOut } from "lucide-react";
 
 export default function Header() {
   const user = useSelector((state: RootState) => state.user);
@@ -17,14 +18,14 @@ export default function Header() {
           <Dropdown.Title className="py-2 text-white text-base hover:text-blue-100 transition-colors duration-300">
             {user.username || "Guest"}
           </Dropdown.Title>
-          <Dropdown.Menu className="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 flex flex-col right-0 shadow-lg rounded-md w-fit">
+          <Dropdown.Menu className="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 flex flex-col right-0 shadow-lg rounded-md w-fit ">
             <Link to={"/products"} className="w-full">
-              <Dropdown.Item className="hover:bg-blue-100 dark:hover:bg-blue-700 transition-colors duration-300">
+              <Dropdown.Item className="hover:bg-blue-100 dark:hover:bg-blue-700 transition-colors duration-300 text-left">
                 Dashboard
               </Dropdown.Item>
             </Link>
             <Link to={"/edit-profile"} className="w-full">
-              <Dropdown.Item className="hover:bg-blue-100 dark:hover:bg-blue-700 transition-colors duration-300">
+              <Dropdown.Item className="hover:bg-blue-100 dark:hover:bg-blue-700 transition-colors duration-300 text-left">
                 Edit Profile
               </Dropdown.Item>
             </Link>
@@ -32,9 +33,9 @@ export default function Header() {
               onClick={() => {
                 dispatch(signOut());
               }}
-              className="hover:bg-blue-100 dark:hover:bg-blue-700 transition-colors duration-300"
+              className="hover:bg-red-100 dark:hover:bg-red-700 transition-colors duration-300 text-red-500 hover:text-red-600 text-left"
             >
-              Logout
+             <LogOut className="inline-block mr-1" size={16}/> Logout
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
