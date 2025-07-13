@@ -20,7 +20,7 @@ export type FilterConfig =
       options: FilterOption[];
     };
 
- interface FilterSectionProps {
+interface FilterSectionProps {
   filterConfigs: FilterConfig[];
 }
 
@@ -126,7 +126,11 @@ export default function FilterSection({ filterConfigs }: FilterSectionProps) {
                 value={searchInputs[filter.id] || ""}
                 onChange={(e) => handleSearchChange(filter.id, e.target.value)}
                 placeholder={filter.placeholder || "Cari..."}
-                className="w-full pl-8 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary-400"
+                className={`
+                  w-full text-base pl-8 pr-3 py-2 rounded-md 
+                  ${"outline-neutral-200 focus:outline-blue-400"}
+                   outline-1
+                `}
               />
               <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
             </div>
