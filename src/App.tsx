@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, redirect } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import { useSelector } from "react-redux";
 import LoginPage from "./pages/LoginPage";
@@ -69,6 +69,12 @@ function App() {
       loader: checkAuthLoader,
 
       children: [
+        {
+          path: "",
+          loader: () => {
+            return redirect("/products");
+          },
+        },
         {
           path: "products",
           element: <ProductPage />,
