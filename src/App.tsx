@@ -9,6 +9,7 @@ import { seedDBIfEmpty } from "./utils/indexedDB";
 import DashboardLayout from "./components/layout/DashboardLayout";
 import { checkAuthLoader } from "./features/auth/services/authService";
 import ProductPage from "./pages/ProductPage";
+import EditProfilePage from "./pages/EditProfilePage";
 
 function App() {
   const theme = useSelector((state: RootState) => state.theme);
@@ -72,10 +73,10 @@ function App() {
           path: "products",
           element: <ProductPage />,
         },
-        // {
-        //   path: "edit-profile",
-        //   element: <EditProfilePage />,
-        // },
+        {
+          path: "edit-profile",
+          element: <EditProfilePage />,
+        },
       ],
     },
   ]);

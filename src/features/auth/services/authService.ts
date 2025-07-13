@@ -43,8 +43,6 @@ function checkAuthLoader(): unknown {
   const isAuth = isLoggedIn();
   if (!isAuth) {
     return redirect("/login");
-  } else {
-    // return redirect("/products");
   }
 }
 
