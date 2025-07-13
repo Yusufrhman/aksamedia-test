@@ -11,7 +11,7 @@ Currently, two official Vite plugins for React are supported:
 
 ## ✨ First Login
 
-You can log in with one of the predefined accounts below:
+You can log in with predefined account below:
 
 | Username       | Password |
 | -------------- | -------- |
