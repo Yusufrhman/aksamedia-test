@@ -101,7 +101,7 @@ export default function ProductForm({
           name="category"
           value={formData.category}
           onChange={handleChange}
-          className={`p-2 border border-neutral-200 rounded-lg text-xs sm:text-sm md:text-base h-10 w-full bg-white dark:bg-neutral-800 mt-2  ${
+          className={`p-2 border border-neutral-200 rounded-lg text-base h-10 w-full bg-white dark:bg-neutral-800 mt-2  ${
             error.category && "focus:border-red-500 border-red-500"
           }`}
         >
