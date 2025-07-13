@@ -10,6 +10,7 @@ import DashboardLayout from "./components/layout/DashboardLayout";
 import { checkAuthLoader } from "./features/auth/services/authService";
 import ProductPage from "./pages/ProductPage";
 import EditProfilePage from "./pages/EditProfilePage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   const theme = useSelector((state: RootState) => state.theme);
@@ -82,6 +83,10 @@ function App() {
         {
           path: "edit-profile",
           element: <EditProfilePage />,
+        },
+        {
+          path: "*",
+          element: <NotFoundPage />, // 404 untuk route dalam DashboardLayout
         },
       ],
     },
