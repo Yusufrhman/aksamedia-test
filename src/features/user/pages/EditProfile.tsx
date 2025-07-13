@@ -71,6 +71,7 @@ export default function EditProfile() {
             type="text"
             placeholder="Enter your full name"
             value={user.fullname}
+            className="text-neutral-900 dark:text-neutral-100"
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setUser({ ...user, fullname: e.target.value })
             }
@@ -81,6 +82,7 @@ export default function EditProfile() {
             label="Username"
             type="text"
             placeholder="Enter your username"
+            className="text-neutral-900 dark:text-neutral-100"
             value={user.username}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setUser({ ...user, username: e.target.value })
@@ -92,6 +94,7 @@ export default function EditProfile() {
             label="Password"
             type="password"
             placeholder="Enter your password"
+            className="text-neutral-900 dark:text-neutral-100"
             error={error.password}
           />
           <MainButton type="submit" className="w-full mt-2">
